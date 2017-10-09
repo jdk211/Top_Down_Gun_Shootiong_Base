@@ -90,15 +90,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Enemy.cs" />
-    <Compile Include="Assets\Script\Enum.cs" />
-    <Compile Include="Assets\Script\IDamageable.cs" />
-    <Compile Include="Assets\Script\LivingEntity.cs" />
-    <Compile Include="Assets\Script\MapGenerator.cs" />
+    <Compile Include="Assets\Script\Global\Enum.cs" />
+    <Compile Include="Assets\Script\Global\Utility.cs" />
+    <Compile Include="Assets\Script\Map\MapGenerator.cs" />
     <Compile Include="Assets\Script\ObjectController.cs" />
     <Compile Include="Assets\Script\ObjectPool.cs" />
-    <Compile Include="Assets\Script\Player.cs" />
-    <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\Sound\AudioManager.cs" />
     <Compile Include="Assets\Script\Sound\MusicManager.cs" />
     <Compile Include="Assets\Script\Sound\SoundLibrary.cs" />
@@ -107,9 +103,13 @@
     <Compile Include="Assets\Script\UI\GameUI.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
     <Compile Include="Assets\Script\UI\ScoreKeeper.cs" />
-    <Compile Include="Assets\Script\Utility.cs" />
-    <Compile Include="Assets\Script\ViewObject.cs" />
-    <Compile Include="Assets\Script\ViewObjectPoolKey.cs" />
+    <Compile Include="Assets\Script\Unit\Enemy.cs" />
+    <Compile Include="Assets\Script\Unit\IDamageable.cs" />
+    <Compile Include="Assets\Script\Unit\LivingEntity.cs" />
+    <Compile Include="Assets\Script\Unit\Player.cs" />
+    <Compile Include="Assets\Script\Unit\PlayerController.cs" />
+    <Compile Include="Assets\Script\Unit\ViewObject.cs" />
+    <Compile Include="Assets\Script\Unit\ViewObjectPoolKey.cs" />
     <Compile Include="Assets\Script\Weapon\Gun.cs" />
     <Compile Include="Assets\Script\Weapon\GunController.cs" />
     <Compile Include="Assets\Script\Weapon\MuzzleFlash.cs" />
