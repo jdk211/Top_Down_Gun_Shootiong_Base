@@ -5,7 +5,7 @@ using UnityEngine;
 public class LivingEntity : MonoBehaviour, IDamageable {
 
     public float startingHealth;
-    protected float health;
+    public float health { get; protected set; }
     protected bool dead;
 
     public event System.Action OnDeath; // 델리게이트 메소드
@@ -16,7 +16,14 @@ public class LivingEntity : MonoBehaviour, IDamageable {
         dead = false;
     }
 
-    public void TakeHit(float damage, RaycastHit hit)
+    public virtual void TakeHit(float damage, Vector3 hitPoint, Vector3 hitDirection)
+    {
+        // TODO : hit 변수로 어떤 처리들을 할 예정
+        // hit 지점에 파티클을 생성하거나 ... etc
+        TakeDamage(damage);
+    }
+
+    public virtual void TakeDamage(float damage)
     {
         health -= damage;
 
@@ -26,7 +33,8 @@ public class LivingEntity : MonoBehaviour, IDamageable {
         }
     }
 
-    protected void Die()
+    [ContextMenu("Self Destruct")] // ? 동작 안되는거 같다
+    public virtual void Die()
     {
         dead = true;
         if(OnDeath != null)
