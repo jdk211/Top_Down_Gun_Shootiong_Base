@@ -101,9 +101,9 @@ public class Spawner : MonoBehaviour {
             yield return null;
         }
 
-        Enemy spawnedEnemy = Instantiate(enemy, randomTile.position + Vector3.up, Quaternion.identity) as Enemy;
-        spawnedEnemy.OnDeath += OnEnemyDeath;
-        spawnedEnemy.SetCharacteristics(currentWave.moveSpeed, currentWave.hitsToKillPlayer, currentWave.enemyHealth, currentWave.skinColor);
+        //Enemy spawnedEnemy = Instantiate(enemy, randomTile.position + Vector3.up, Quaternion.identity) as Enemy;
+        Enemy spawnedEnemy = ObjectPool.Instance().GetObject("Enemy") as Enemy;
+        spawnedEnemy.SetCharacteristics(randomTile.position + Vector3.up, currentWave.moveSpeed, currentWave.hitsToKillPlayer, currentWave.enemyHealth, currentWave.skinColor);
     }
 
     void OnPlayerDeath()
@@ -111,9 +111,10 @@ public class Spawner : MonoBehaviour {
         isDisabled = true;
     }
 
-    void OnEnemyDeath()
+    public void OnEnemyDeath()
     {
         enemiesRemainingAlive--;
+        Debug.Log(enemiesRemainingAlive);
 
         if(enemiesRemainingAlive == 0)
         {
@@ -148,6 +149,8 @@ public class Spawner : MonoBehaviour {
 
             ResetPlayerPosition();
         }
+        StopCoroutine("SpawnEnemy");
+        ObjectPool.Instance().ReturnAllObject();
     }
 
     [System.Serializable]

@@ -80,5 +80,7 @@ public class Player : LivingEntity {
     {
         AudioManager.instance.PlaySound("Player Death", transform.position);
         base.Die();
+        dead = true;
+        GameObject.Destroy(this.gameObject);
     }
 }

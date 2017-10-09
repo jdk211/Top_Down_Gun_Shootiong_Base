@@ -13,11 +13,13 @@ public class Enemy : LivingEntity {
 
     public static event System.Action OnDeathStatic;
 
+    Transform myTrans;
     NavMeshAgent pathfinder;
     Transform target;
     LivingEntity targetEntity;
     Material skinMaterial;
     Color originalColor;
+    Spawner spawner;
 
     float attackDistanceThreshold = 0.5f; // 공격 거리 임계값 , 유니티에서 단위 1 = 1 meter 이다
     float timeBetweenAttacks = 1;
@@ -31,7 +33,10 @@ public class Enemy : LivingEntity {
 
     private void Awake()
     {
+        myTrans = GetComponent<Transform>();
         pathfinder = GetComponent<NavMeshAgent>();
+        spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
+        OnDeath += spawner.OnEnemyDeath;
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -57,13 +62,14 @@ public class Enemy : LivingEntity {
             currentState = State.Chasing;
 
             targetEntity.OnDeath += OnTargetDeath;
-
-            StartCoroutine("UpdatePath");
         }
     }
 
-    public void SetCharacteristics(float moveSpeed, int hitsToKillPlayer, float enemyHealth, Color skinColor)
+    public void SetCharacteristics(Vector3 startPos, float moveSpeed, int hitsToKillPlayer, float enemyHealth, Color skinColor)
     {
+        myTrans.position = startPos;
+        currentState = State.Chasing;
+        pathfinder.enabled = true;
         pathfinder.speed = moveSpeed;
 
         if(hasTarget)
@@ -77,6 +83,8 @@ public class Enemy : LivingEntity {
         skinMaterial = GetComponent<Renderer>().material;
         skinMaterial.color = skinColor;
         originalColor = skinMaterial.color;
+
+        StartCoroutine("UpdatePath");
     }
 
     private void Update()
@@ -177,6 +185,12 @@ public class Enemy : LivingEntity {
 
             yield return new WaitForSeconds(refreshRate);
         }
+    }
+
+    public override void Die()
+    {
+        ObjectPool.Instance().ReturnObject(this);
+        base.Die();
     }
 
     /* 비싼 처리 비용

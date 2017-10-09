@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LivingEntity : MonoBehaviour, IDamageable {
+public class LivingEntity : ViewObject, IDamageable {
 
     public float startingHealth;
     public float health { get; protected set; }
@@ -36,11 +36,9 @@ public class LivingEntity : MonoBehaviour, IDamageable {
     [ContextMenu("Self Destruct")] // ? 동작 안되는거 같다
     public virtual void Die()
     {
-        dead = true;
         if(OnDeath != null)
         {
             OnDeath();
         }
-        GameObject.Destroy(this.gameObject);
     }
 }
