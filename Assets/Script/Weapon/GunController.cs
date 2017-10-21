@@ -6,11 +6,6 @@ public class GunController : MonoBehaviour {
     public Gun[] allGuns;
     Gun equippedGun;
 
-    private void Start()
-    {
-
-    }
-
     public void EquipGun(Gun gunToEquip)
     {
         if(equippedGun != null)
@@ -23,8 +18,11 @@ public class GunController : MonoBehaviour {
 
     public void EquipGun(int weaponIndex)
     {
-        if (weaponIndex > allGuns.Length - 1) return;
-
+        if (weaponIndex > allGuns.Length - 1)
+        {
+            EquipGun(allGuns[0]);
+            return;
+        }
         EquipGun(allGuns[weaponIndex]);
     }
 

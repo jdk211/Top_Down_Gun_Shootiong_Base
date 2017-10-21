@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class Enemy : LivingEntity {
+public class Enemy : LivingEntity
+{
 
     public enum State { Idle, Chasing, Attacking };
     State currentState;
@@ -53,10 +54,11 @@ public class Enemy : LivingEntity {
     }
 
     // Use this for initialization
-    protected override void Start () {
+    protected override void Start()
+    {
         base.Start();
         pathfinder = GetComponent<NavMeshAgent>();
-
+        
         if (hasTarget)
         {
             currentState = State.Chasing;
@@ -72,9 +74,10 @@ public class Enemy : LivingEntity {
         pathfinder.enabled = true;
         pathfinder.speed = moveSpeed;
 
-        if(hasTarget)
+        if (hasTarget)
         {
-            damage = Mathf.Ceil(targetEntity.startingHealth / hitsToKillPlayer);
+            //damage = Mathf.Ceil(targetEntity.startingHealth / hitsToKillPlayer);
+            damage = hitsToKillPlayer;
         }
 
         startingHealth = enemyHealth;
@@ -84,12 +87,15 @@ public class Enemy : LivingEntity {
         skinMaterial.color = skinColor;
         originalColor = skinMaterial.color;
 
-        StartCoroutine("UpdatePath");
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+            StartCoroutine("UpdatePath");
+        else
+            hasTarget = false;
     }
 
     private void Update()
     {
-        if(hasTarget)
+        if (hasTarget)
         {
             if (Time.time > nextAttackTime)
             {
@@ -107,15 +113,15 @@ public class Enemy : LivingEntity {
     public override void TakeHit(float damage, Vector3 hitPoint, Vector3 hitDirection)
     {
         AudioManager.instance.PlaySound("Impact", transform.position);
-        if(damage >= health)
+        if (damage >= health)
         {
-            if(OnDeathStatic != null)
+            if (OnDeathStatic != null)
             {
                 OnDeathStatic();
             }
             AudioManager.instance.PlaySound("Enemy Death", transform.position);
             Destroy(Instantiate(deathEffect.gameObject, hitPoint, Quaternion.FromToRotation(Vector3.forward, hitDirection)) as GameObject,
-                                            effectSetting.startLifetime.constant); 
+                                            effectSetting.startLifetime.constant);
             //그냥 ParticleSystem에 있는 startLifeTime은 사용할수없음
             //ParticleSystem.MainModule을 사용해서 사용
         }
@@ -144,9 +150,9 @@ public class Enemy : LivingEntity {
 
         bool hasAppliedDamage = false;
 
-        while(percent <= 1)
+        while (percent <= 1)
         {
-            if(percent >= 0.5f && !hasAppliedDamage)
+            if (percent >= 0.5f && !hasAppliedDamage)
             {
                 hasAppliedDamage = true;
                 targetEntity.TakeDamage(damage);
@@ -170,9 +176,9 @@ public class Enemy : LivingEntity {
         // 1초에 4번 경로를 재 계산
         float refreshRate = 0.25f;
 
-        while(hasTarget)
+        while (hasTarget)
         {
-            if(currentState == State.Chasing)
+            if (currentState == State.Chasing)
             {
                 Vector3 dirToTarget = (target.position - transform.position).normalized;
                 Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);

@@ -90,6 +90,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\CSV\CSVReader.cs" />
     <Compile Include="Assets\Script\Global\Enum.cs" />
     <Compile Include="Assets\Script\Global\Utility.cs" />
     <Compile Include="Assets\Script\Map\MapGenerator.cs" />
@@ -99,9 +100,12 @@
     <Compile Include="Assets\Script\Sound\MusicManager.cs" />
     <Compile Include="Assets\Script\Sound\SoundLibrary.cs" />
     <Compile Include="Assets\Script\Spawner.cs" />
+    <Compile Include="Assets\Script\StageManager.cs" />
     <Compile Include="Assets\Script\UI\Crosshairs.cs" />
     <Compile Include="Assets\Script\UI\GameUI.cs" />
+    <Compile Include="Assets\Script\UI\LevelButton.cs" />
     <Compile Include="Assets\Script\UI\Menu.cs" />
+    <Compile Include="Assets\Script\UI\SceneFader.cs" />
     <Compile Include="Assets\Script\UI\ScoreKeeper.cs" />
     <Compile Include="Assets\Script\Unit\Enemy.cs" />
     <Compile Include="Assets\Script\Unit\IDamageable.cs" />

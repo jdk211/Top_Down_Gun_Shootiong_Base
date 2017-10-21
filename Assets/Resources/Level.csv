@@ -1,0 +1,12 @@
+Level,infinite,enemyCount,timeBetweenSpawns,moveSpeed,damage,enemyHealth,skinColorR,skinColorG,skinColorB
+int,bool,int,float,float,int,int,Color,Color,Color
+1,false,5,1.5,2.0,1,1,255.0,0.0,0.0
+2,false,6,1.4,2.2,1,1,0.0,255.0,0.0
+3,false,7,1.3,2.4,1,1,0.0,0.0,255.0
+4,false,8,1.2,2.6,1,1,255.0,255.0,0.0
+5,false,9,1.1,2.8,1,1,0.0,255.0,255.0
+6,false,10,1.0,3.0,1,1,255.0,0.0,255.0
+7,false,11,1.0,3.0,1,1,255.0,255.0,255.0
+8,false,12,1.0,3.0,1,1,0.0,0.0,0.0
+9,false,13,1.0,3.0,1,1,100.0,100.0,100.0
+10,true,14,1.0,3.0,2,1,100.0,255.0,100.0

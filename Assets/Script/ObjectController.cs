@@ -43,12 +43,10 @@ public class ObjectController : MonoBehaviour {
     #endregion
 
     private Dictionary<EObjectID, ViewObjectPoolKey> m_dictObjectPoolKey;
-    private Dictionary<int, ViewObject> m_dictViewObject;
 
     private void Awake()
     {
         CheckSingleton();
-        m_dictViewObject = new Dictionary<int, ViewObject>();
 
         InitObjectPoolKey();
         MakeViewObjectPool();
@@ -56,10 +54,10 @@ public class ObjectController : MonoBehaviour {
 
     private void InitObjectPoolKey()
     {
-        m_dictObjectPoolKey = new Dictionary<EObjectID, ViewObjectPoolKey>();
         ViewObjectPoolKey pObjectPoolKey;
-
         pObjectPoolKey = new ViewObjectPoolKey(EObjectID.Enemy, "Enemy", "Enemy", 10);
+
+        m_dictObjectPoolKey = new Dictionary<EObjectID, ViewObjectPoolKey>();
         m_dictObjectPoolKey.Add(pObjectPoolKey.ID, pObjectPoolKey);
     }
 

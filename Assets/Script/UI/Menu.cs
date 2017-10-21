@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour {
 
+    public SceneFader sceneFade;
     public GameObject mainMenuHolder;
     public GameObject optionsMenuHolder;
 
@@ -34,7 +35,7 @@ public class Menu : MonoBehaviour {
 
     public void Play()
     {
-        SceneManager.LoadScene("Main");
+        sceneFade.FadeTo("Main");
     }
 
     public void Quit()
