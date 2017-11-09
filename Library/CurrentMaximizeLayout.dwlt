@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1707
     height: 934
-  m_MinSize: {x: 883, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 887, y: 471}
+  m_MaxSize: {x: 18006, y: 14021}
   vertical: 0
-  controlID: 29116
+  controlID: 945
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,10 +120,10 @@ MonoBehaviour:
     y: 0
     width: 1345
     height: 934
-  m_MinSize: {x: 606, y: 492}
-  m_MaxSize: {x: 14006, y: 14042}
+  m_MinSize: {x: 610, y: 471}
+  m_MaxSize: {x: 14004, y: 14021}
   vertical: 1
-  controlID: 29117
+  controlID: 946
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,10 +145,10 @@ MonoBehaviour:
     y: 0
     width: 1345
     height: 640
-  m_MinSize: {x: 606, y: 221}
-  m_MaxSize: {x: 12006, y: 4021}
+  m_MinSize: {x: 610, y: 221}
+  m_MaxSize: {x: 12010, y: 4021}
   vertical: 0
-  controlID: 29041
+  controlID: 947
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -291,8 +291,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 640
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -326,9 +326,9 @@ MonoBehaviour:
     height: 619
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 70dd0100
-    m_LastClickedID: 122224
-    m_ExpandedIDs: d6bffdff18c7fdff64e1fdffb2fffdff7c2afeff1e96feff8e9cfeff6ed8ffffdcfbffff00000000aa280000ec28000088290000aa2900000e2a0000ac3f0100e63f010084400100b040010020410100b2a30100dca301006aa4010092a40100eea40100
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: dcfbffff00000000ae280000d8280000662900008e290000ea290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -371,10 +371,10 @@ MonoBehaviour:
     y: 640
     width: 1345
     height: 294
-  m_MinSize: {x: 336, y: 271}
-  m_MaxSize: {x: 14006, y: 10021}
+  m_MinSize: {x: 334, y: 250}
+  m_MaxSize: {x: 14004, y: 10000}
   vertical: 0
-  controlID: 29118
+  controlID: 852
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -393,8 +393,8 @@ MonoBehaviour:
     y: 0
     width: 1072
     height: 294
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -439,19 +439,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Script/CSV
+    - Assets/Script/UI
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Script/CSV
+  - Assets/Script/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\JDK\Desktop\Unity\Top_Down_Gun_Shootiong_Base
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 132}
-    m_SelectedIDs: c8da0100
-    m_LastClickedID: 121544
-    m_ExpandedIDs: 000000000026000096260000fa260000662700008e27000000ca9a3bffffff7f
+    m_SelectedIDs: d2270000
+    m_LastClickedID: 10194
+    m_ExpandedIDs: 00000000062600009e26000006270000742700009c27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -479,7 +479,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000026000096260000fa260000662700008e27000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000062600009e26000006270000742700009c27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -504,9 +504,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 70dd0100
-    m_LastClickedInstanceID: 122224
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000030000016300000902c0000162a0000682700004e2b00008c2e00007c28040000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
